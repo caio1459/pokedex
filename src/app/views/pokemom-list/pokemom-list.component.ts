@@ -1,11 +1,17 @@
 import { Component } from '@angular/core';
+import { PokemonServiceService } from 'src/app/services/pokemon.service';
 
 @Component({
   selector: 'app-pokemom-list',
   templateUrl: './pokemom-list.component.html',
-  styleUrls: ['./pokemom-list.component.sass']
+  styleUrls: ['./pokemom-list.component.sass'],
 })
 export class PokemomListComponent {
-  pokemonCards = [0, 0, 0];
-  pokemon: string[] = ["pikachu", "eve", "Char"]
+  pokemons!: any[];
+
+  constructor(private pokemonService: PokemonServiceService) {
+    this.pokemonService.getAllPokemons(151, 0).subscribe((data) => {
+      this.pokemons = data.results;
+    });
+  } // Trás o service
 }

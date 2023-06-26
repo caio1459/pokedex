@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from '@angular/material/card';
 import { PokemonCardComponent } from './views/pokemon-card/pokemon-card.component';
 
+import { HttpClientModule } from '@angular/common/http';
+import { PokemonServiceService } from './services/pokemon.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,9 +31,10 @@ import { PokemonCardComponent } from './views/pokemon-card/pokemon-card.componen
     MatToolbarModule,
     MatButtonModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [PokemonServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
