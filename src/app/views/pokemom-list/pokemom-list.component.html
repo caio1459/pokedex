@@ -1,4 +1,4 @@
 <div class="container">
-    <app-pokemon-card *ngFor="let pokemon of pokemons; let i = index"
-        [pokemonName]="pokemons[i]" [idImg]="i + 1"></app-pokemon-card>
+    <app-pokemon-card *ngFor="let pokemon of pokemons; let i = index" [pokemon]="pokemon"
+        [idImg]="i + 1"></app-pokemon-card>
 </div>
