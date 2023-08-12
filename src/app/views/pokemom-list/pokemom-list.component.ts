@@ -12,6 +12,7 @@ export class PokemomListComponent {
   constructor(private pokemonService: PokemonServiceService) {
     this.pokemonService.getAllPokemons(151, 0).subscribe((data) => {
       this.pokemons = data.results;
+      console.log(data.results);
     });
-  } // Trás o service
+  }
 }
